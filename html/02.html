@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表</title>
+</head>
+
+<body>
+    <h1>有序、无序、自定义列表</h1>
+    <ul>
+        <li>无序列表</li>
+    </ul>
+
+    <ol>
+        <li>有序列表</li>
+        <li>有序列表</li>
+    </ol>
+
+    <dl>
+        <dt><a href="#">广东</a></dt>
+        <dd><a href="#">河源</a></dd>
+        <dd><a href="#">紫金</a></dd>
+    </dl>
+
+    <h2>表格</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>数学</th>
+                <th>英语</th>
+                <th>总分</th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+            <tr>
+                <td>张三</td>
+                <td>88</td>
+                <td rowspan="2">100</td>
+                <td>187</td>
+            </tr>
+        </tbody>
+
+
+        <tbody>
+            <tr>
+                <td>李四</td>
+                <td>80</td>
+
+                <td>179</td>
+            </tr>
+
+        </tbody>
+
+
+        <tfoot>
+            <tr>
+                <td>排名</td>
+                <td colspan="3">第一</td>
+
+            </tr>
+        </tfoot>
+    </table>
+
+    <h2>表单</h2>
+    <label for="name">用户：</label><input type="text" placeholder="请输入用户名" id="name"><br>
+    <label>密码：<input type="password" placeholder="请输入密码"></label><br>
+    <label>性别：<input type="radio" name="sex" checked>男</label>
+    <label><input type="radio" name="sex">女</label><br>
+    爱好：<input type="checkbox">篮球
+    <input type="checkbox">羽毛球<br>
+
+    上传头像：<input type="file" multiple><br>
+
+    籍贯：
+    <select name="" id="">
+        <option>广东</option>
+        <option>湖南</option>
+        <option selected>浙江</option>
+    </select>
+
+    请你留言文本域：
+    <textarea name="" id="" cols="30" rows="4">评论</textarea><br>
+
+    <button type="button">按钮</button>
+    <button type="submit">提交</button>
+    <button type="reset">重置</button>
+
+    <div>一个普通盒子，div独占一行</div>
+    <span>span可以一行多个，不换行</span>
+</body>
+
+</html>
