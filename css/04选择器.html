@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+
+        /* 后代选择器 */
+        ul li{
+            color: red;
+        }
+        ol li{
+            color: green;
+        }
+        .demo1 ul li{
+            color: blue;
+        }
+        /* 子元素选择器 */
+        div>p{
+            color: red;
+        }
+        /* 并集选择器 */
+        div,p,span,demo2 li{
+            color: red;
+        }
+        /* 交集选择器 */
+        div.red{
+            color: red;
+        }
+        p.red{
+            font-size: 20px;
+        }
+        /* 伪类选择器 */
+        a{
+            font-weight: 700;
+            font-size: 16px;
+            color: gray;
+        }
+        a:hover{
+            color: red;
+        }
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        .box3:hover{
+            background-color: pink;
+            color: beige;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+     
+
+        <!-- 后代选择器 -->
+         <ul>
+            <li>青春正能量</li>
+            <li>青春正能量</li>
+            <li>青春正能量</li>
+         </ul>
+         <ol>
+            <li>青春无限好</li>
+            <li>青春无限好</li>
+            <li>青春无限好</li>
+         </ol>
+         <div class="demo1">
+            <ul>
+                <li>青春满活力</li>
+                <li>青春满活力</li>
+                <li>青春满活力</li>
+            </ul>
+         </div>
+         <!-- 子元素选择器 -->
+          <div>
+            <p>青春正能量1</p>
+            <p><a href="#">青春正能量2</a></p>
+          </div>
+          <div>
+            <p>青春正能量4</p>
+          </div>
+          <!-- 并集选择器 -->
+           <div>青春无限好</div>
+           <p>青春无限好1</p>
+           <span>青春无限好2</span>
+           <ul>
+                <li>青春无限好3</li> 
+           </ul>
+           <ol class="demo2">
+            <li>青春无限好</li>
+           </ol>
+           <!-- 交集选择器 -->
+            <div class="red">交集选择器</div>
+            <div class="red">交集选择器</div>
+            <div>我也是交集选择器</div>
+            <p class="red">我是段落</p>
+            <p class="red">我是段落</p>
+    </div>
+    <!-- 伪类选择器 -->
+    <a href="https://www.baidu.com">百度</a>
+    <div class="box3">我是盒子</div>
+</body>
+</html>
+
+<!-- 层叠性：相同的属性，后面的覆盖前面的；不相同的不会覆盖前面的 -->
+ <!-- 优先级：！important>行内样式>id选择器>类选择器>标签选择器>通配符选择器、、选中标签范围越大，优先级越低 -->
