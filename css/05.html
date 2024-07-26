@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 选择第一个 */
+        ul li:first-child{
+            color: pink;
+        }
+        /* 选择最后一个 */
+        ul li:last-child{
+            color: aqua;
+        }
+        /* 选择任意一个 */
+        ul li:nth-child(6){
+            color: blue;
+        }
+
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 3px dotted #000;
+            /* border-top: 3px dotted #000; */
+            /* border-right: 3px dotted #000; */
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 3px dotted #000;
+            /* 四个方向 内边距相同 */
+            padding: 10px;
+            /* 单独设置一个方向内边距padding-top... */
+            /* padding: 上 右 下 左; padding:上 左右 下；padding：上下 左右*/
+
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>第1个</li>
+        <li>第2个</li>
+        <li>第3个</li>
+        <li>第4个</li>
+        <li>第5个</li>
+        <li>第6个</li>
+        <li>第7个</li>
+        <li>第8个</li>
+    </ul>
+
+    <div class="box1"></div><hr>
+
+    <div class="box2">内边距padding</div>
+
+</body>
+</html>
+
+
+<!-- 适配：vw：视口宽度的百分之一、vh：视口高度的百分之一 -->
+ <!-- 结构伪类选择器 E:first-child(查找第一个)、E:last-child(选择最后一个) -->
+  <!-- E:first-child(2n)-2的倍数0开始、E:first-child(2n+1)。。。等等 -->
+
+  <!-- 伪元素选择器：E::befor(在E元素前添加)、E::after(在E元素后添加) 块级元素不能调整大小-->
+
+  <!-- 盒子模型组成部分：
+  内容区域--width & height
+  内边距--padding(出现在内容与盒子边缘之间)
+  边框线--border:solid(实线)、dashed(虚线)、dotted(点线)
+  外边距--margin(出现在盒子外面) -->
+
+  <!-- 盒子模型尺寸计算：盒子尺寸 = 内容尺寸 + border尺寸 +内边距尺寸
+  结论:给盒子加border/padding会撑大盒子
+  解决:手动做减法,减掉border/padding的尺寸、、优先：内减模式:box-sizing:border-box -->
+
+  <!-- 行内和行内块元素水平居中对齐，给块级的父元素添加auto
+  块级元素水平居中对齐：让盒子的左右外边距设置为auto就可以了。margin:auto
+  水平居中：margin-left:auto;  margin-right:auto*（左右填满）
+  -->
+
+  <!-- 清楚默认内外边距 -->
+   <!-- *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   } -->
+<!-- 清楚项目列表符号
+li{
+    list-style: none;
+} 
+-->
+
+<!-- 超出的部分隐藏
+{
+    overflowe:hidden;
+}
+超出的部分显示滚动条
+{
+    overflow：scroll；
+}
+auto 如果超出则显示滚动调，不超出则不显示 -->

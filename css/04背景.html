@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 800px;
+            height: 800px;
+            background-color: pink;
+            background-image: url(./danci.jpg);
+            /* 是否平铺 */
+            /* background-repeat:no-repeat; */
+            /* 图片位置 */
+            /* background-position: center top; */
+            /* 显示整张图片 */
+            /* background-size: contain; */
+            /* 铺满整个盒子 */
+            /* background-size: cover; */
+
+            /* 背景固定 */
+            /* background-attachment: fixed; */
+
+            background: pink url(../html/043.jpg) no-repeat fixed center top/cover;
+
+        }
+        .box:hover{
+            background: url(./danci.jpg) no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
