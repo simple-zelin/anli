@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 1240px;
+            height: 540px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+        .box-bd ul{
+            display: flex;
+            justify-content: space-between;
+        }
+        .box-hd{
+            /* 给父亲添加flex里面的孩子 h2和a可以一行显示 */
+            display: flex;
+            /* 两侧没缝隙 主轴对齐 */
+            justify-content: space-between;
+            /* 侧轴底对齐 */
+            align-items: flex-end;
+            padding: 40px 0;
+        }
+
+        .box-hd h2 span {
+            font-size: 16px;
+            color: #999;
+        }
+        .box-bd li img{
+            width: 100%;
+        }
+        .box-bd li h4 {
+            font-size: 22px;
+            font-weight: 400;
+            margin: 12px 0 20px;
+        }
+        .box-bd li p {
+            font-size: 19px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-hd">
+        <h2>新鲜好物
+            <span>新鲜出炉，品质靠谱</span>
+        </h2>
+        <a href="#">查看更多</a>
+    </div>
+    
+        <div class="box-bd">
+            <ul>
+                <li>
+                    <img src="../html/043.jpg" alt="">
+                    <h4>全防水HABU旋钮</h4>
+                    <p>$444</p>
+                </li>
+                <li>
+                    <img src="../html/043.jpg" alt="">
+                    <h4>全防水HABU旋钮</h4>
+                    <p>$444</p>
+                </li>
+                <li>
+                    <img src="../html/043.jpg" alt="">
+                    <h4>全防水HABU旋钮</h4>
+                    <p>$444</p>
+                </li>
+                <li>
+                    <img src="../html/043.jpg" alt="">
+                    <h4>全防水HABU旋钮</h4>
+                    <p>$444</p>
+                </li>
+            </ul><hr>
+            <p>创建flex：display:flex<br>主轴对齐方式:justify-content<br>
+                侧轴对齐方式:align-items<br>
+                弹性盒子换行：flex-wrap<br>
+                行对齐方式：align-content<br>
+            </p>
+        </div>
+</body>
+</html>

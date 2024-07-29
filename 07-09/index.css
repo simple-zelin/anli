@@ -1,0 +1,322 @@
+/* 书写自己的首页样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f3f5f7;
+}
+
+/* 定义一个版心 */
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    height: 100px;
+    background-color: #fff;
+    /* display: flex; */
+}
+
+.logo {
+    width: 195px;
+    height: 41px;
+    background-color: purple;
+}
+
+.header .wrapper {
+   
+    padding-top: 29px;
+    /* 实现水平居中 */
+    justify-content: center;
+    display: flex;
+}
+.logo a {
+    display: block;
+}
+
+/* nav导航 */
+.nav {
+    margin-left: 100px;
+    /* display: flex; */
+}
+
+.nav ul {
+    display: flex;
+}
+.nav li {
+    margin-right: 20px;
+}
+.nav li a {
+    font-size: 19px;
+    padding: 12px 8px 8px;
+    text-decoration: none;
+    line-height: 19px;
+}
+.nav li a:hover {
+    border-bottom: 2px solid #00a4ff;
+}
+
+.search {
+    width: 412px;
+    height: 40px;
+    background-color: #f3f5f7;
+    border-radius: 20px;
+    margin-left: 80px;
+    display: flex;
+}
+
+.search input {
+    width: 412px;
+    height: 40px;
+    border: 0;
+    /* 背景透明 */
+    background-color: transparent;
+    padding: 20px;
+    padding-left: 20px;
+    padding-right: 30px;
+    /* 去掉点击之后显示的黑色边框 */
+    outline: 0;
+    
+}
+
+/* 用户模块 */
+.user {
+    margin-left: 32px;
+}
+
+.user img {
+    vertical-align: middle;
+}
+.user span{
+    color: #666666;
+}
+
+/* banner部分 */
+.banner {
+    height: 428px;
+    background-color: #0092cb;
+}
+
+
+.banner .wrapper {
+    height: 420px;
+    background: url(../css/danci.jpg);
+    display: flex;
+    /* 主轴两侧对齐 */
+    justify-content: space-between;
+    /* 侧轴垂直居中 */
+    align-items: center;
+}
+.banner .left li {
+    list-style: none;
+}
+.banner .left {
+    width: 191px;
+    height: 420px;
+    padding-top: 3px;
+    background-color: rgba(0, 0, 0, 0.42);
+}
+.banner .left li a {
+    display: flex;
+    justify-content: space-between;
+    height: 46px;
+    padding: 0 20px;
+    line-height: 46px;
+    font-size: 16px;
+    color: #fff;
+}
+.banner .left li a:hover{
+    color: #0092cb;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.banner .right {
+    width: 218px;
+    height: 305px;
+    padding-top: 18px;
+    background-color: #209dd5;
+    border-radius: 15px;
+
+}
+.banner .right h3{
+    height: 31px;
+    color: #fff;
+    padding-left: 14px;
+    font-size: 15px;
+}
+
+.banner .content {
+    height: 257px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.banner .content dl {
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.banner .content dt {
+    font-size: 14px;
+    font-weight: 700;
+
+}
+
+.banner .content dd {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 8px 0;
+    color: #7d7d7d;
+}
+.banner .content dd span {
+    color: #00a4ff;
+}
+
+.banner .content a {
+    display: block;
+    height: 32px;
+    background-color: #00a4ff;
+    border-radius: 16px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    line-height: 32px;
+}
+
+.banner .content a:hover {
+    background-color: #049bec;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 推荐部分 */
+.recommend {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    background-color: #fff;
+    margin-top: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    line-height: 60px;
+    padding: 0 20px;
+  
+}
+.recommend h3 {
+    color: #00a4ff;
+    font-weight: 400;
+    /* margin-right: 20px; */
+}
+
+.recommend ul {
+    display: flex;
+    list-style: none;
+}
+.recommend ul li a{
+    text-decoration: none;
+    border-right: 1px solid #7d7d7d;
+    padding:0 24px;
+}
+.recommend ul li a:hover{
+    color: #00a4ff;
+}
+.recommend ul li:last-child a{
+    border-right: 0;
+}
+.recommend .mod {
+    text-decoration: none;
+    color: blue;
+}
+
+/* 课程模块 */
+.hd {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    line-height: 30px;
+    background-color: #fff;
+    margin: 30px 0 15px;
+}
+.hd h3 {
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.hd .all {
+    font-size: 16px;
+    color: 16px;
+    color: #999;
+}
+
+.bd ul {
+    display: flex;
+    list-style: none;
+    /* 强制换行 */
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.bd li {
+    width: 228px;
+    height: 271px;
+    background-color: #fff;
+    margin-top: 14px;
+    /* 过渡 */
+    transition: .3s;
+}
+
+.bd li:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.bd li a {
+    display: block;
+    height: 100%;
+}
+.bd a h4 {
+    height: 55px;
+    margin: 20px 20px 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.bd a p {
+    margin-left: 20px;
+}
+/* 前端模块 */
+.hd ul {
+    display: flex;
+    list-style: none;
+}
+
+.hd ul li a {
+    font-size: 16px;
+    margin: 0 30px;
+}
+
+.hd .hot {
+    color: #ee0d0d;
+}
+
+.bd {
+    display: flex;
+    justify-content: space-between;
+}
+.bd .left {
+    width: 228px;
+    height: 386px;
+    /* background-color: pink; */
+}
+
+.bd .right {
+    width: 957px;
+    height: 386px;
+    /* background-color: #100e88; */
+}
+
+.bd .right .top{
+    height: 100px;
+    margin-bottom: 15px;
+}
