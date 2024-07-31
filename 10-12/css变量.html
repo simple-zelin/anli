@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 声明标量 */
+        :root {
+            --mycolor:blue;
+        }
+
+        /* 使用变量 */
+        .box {
+            color: var(--mycolor);
+        }
+
+        .box1 {
+            background-color: var(--mycolor);
+        }
+
+        .box2 {
+            border: 1px solid var(--mycolor);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">文字</div>
+    <div class="box1">文字1</div>
+    <div class="box2">文字2</div>
+</body>
+</html>

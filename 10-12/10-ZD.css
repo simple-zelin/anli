@@ -1,0 +1,44 @@
+/* 容器大小 */
+.container {
+    height: 300px;
+    width: 800px;
+    overflow: hidden;
+  }
+  
+  /* .wrap */
+  .wrap {
+    position: relative;
+    left: 0px;
+    width: 2400px;
+    animation: animateImg ease 5s infinite normal;
+  }
+  
+  /* 图片大小 */
+  .wrap img {
+    width: 800px;
+    float: left;
+    height: 300px;
+    display: block;
+  }
+  
+  /* 动画 */
+  @keyframes animateImg {
+    0% {
+      left: 0px;
+    }
+    20% {
+      left: -0px;
+    }
+    40% {
+      left: -800px;
+    }
+    60% {
+      left: -800px;
+    }
+    80% {
+      left: -1600px;
+    }
+    100% {
+      left: -1600px;
+    }
+  }
