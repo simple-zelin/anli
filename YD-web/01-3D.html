@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 600px;
+        }
+
+        .father {
+            margin: 100px auto;
+            width: 200px;
+            height: 50px;
+            /* border: 1px solid #000; */
+            position: relative;
+            transform-style: preserve-3d;
+            /* 过渡 */
+            transition: all 0.3s;
+        }
+        .father div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 50px;
+        }
+
+        .son1 {
+            text-align: center;
+            line-height: 50px;
+            background-color: green;
+            transform: translateZ(25px);
+        }
+        .son2 {
+            text-align: center;
+            line-height: 50px;
+            background-color: greenyellow;
+            transform: translateY(-25px) rotateX(90deg);
+        }
+
+        .father:hover {
+            transform: rotateX(-90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son1">首页</div>
+        <div class="son2">index</div>
+    </div>
+</body>
+</html>
