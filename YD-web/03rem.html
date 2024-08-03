@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 视口
+     width=device-width：宽度：设备宽 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 媒体查询 */
+        /* 视口宽度为414px的设备 */
+        @media (width:414px) {
+            body {
+                background-color: purple;
+            }
+            /* 通过以上媒体查询，如果设备宽为414则HTML的跟字号如下 */
+            html {
+                font-size: 41.4px;
+            }
+        }
+        @media (width:375px) {
+            body {
+                background-color: pink;
+            }
+        }
+
+        div {
+            width: 5rem;
+            height: 3rem;
+            background-color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>1</div>
+</body>
+</html>

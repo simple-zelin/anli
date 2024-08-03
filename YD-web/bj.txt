@@ -50,12 +50,45 @@ Day2
 animation：动画名称 时长s
 animation的子属性有：
 animation-delay：设置延时，即从元素加载完成之后到动画序列开始执行的这段时间
-animation-direction：设置动画每次运行完后是反方向还是重新回到开始位置重复运行
-animation-duration：设置动画一个周期的时长。
-animation-iteration-count：设置动画重复次数，可以指定infinite无限次重复动画
+animation-direction：alternate反复播放。设置动画每次运行完后是反方向还是重新回到开始位置重复运行
+animation-duration：持续时间。设置动画一个周期的时长。
+animation-iteration-count：infinite无限次重复动画。设置动画重复次数
 animation-name：指定由@keyframes描述的关键帧名称。
 animation-play-state：允许暂停和恢复动画。（paused暂停）
-animation-timing-function：设置动画速度，即通过建立加速曲线，设置动画在关键帧之间是如何变化的。
+animation-timing-function：linear 匀速。steps（）逐帧动画。设置动画速度，即通过建立加速曲线，设置动画在关键帧之间是如何变化的。
 animation-fill-mode：指定动画执行前后如何为目标元素应用样式
 复合写法：
 animation: name duration timing-function delay iteration-count direction fill-mode;（用对应的属性值替换它们）
+
+
+Day3
+1、移动适配
+vw：视口宽度的百分之一。vw 是相对单位，1vw 表示屏幕宽度的 1%
+vh：视口高度的百分之一
+rem：相对单位；1rem相当于1个html的大小，不同的设备有不同的根字体，通过媒体查询（检测视口的宽度）跟字号
+rem单位尺寸：1、确定基准跟字号：查看设计稿宽度--》确定参考设备宽度（视口宽度）--》确定基准跟字号（1/10视口宽度） 2、rem单位尺寸：rem单位尺寸=px单位数值/基准跟字号
+例：计算68px是多少个rem？（设计稿适配375px视口）
+N*37.5 = 68、、、N=68/37.5
+
+
+
+
+2、less
+css预处理器 创建一个less文件输入out:./自动生成对应的css文件，在less文件中可以运算
+
+（1）less变量：
+@mycolor:red(定义变量)   .box{color：@mycolor（}使用变量）
+
+（2）less-导入
+作用：导入less公共样式文件
+语法：导入@import "文件路径"
+提示：如果是less文件可以省略后缀
+@import './base.less'; === @import './base';
+@import './common';
+（3）less-导出
+创建一个less文件输入out:./（./导出路径）
+out: false（禁止导出）
+
+Day4
+响应式布局
+flex-wrap：wrap (换行显示）

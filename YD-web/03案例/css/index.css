@@ -1,0 +1,16 @@
+.box {
+  width: 85rem;
+  height: 37rem;
+  font-size: 18rem;
+  width: 1.81333333rem;
+  height: 0.50666667rem;
+}
+.box div {
+  background-color: pink;
+}
+.box div p {
+  background: #000;
+}
+.box div p:hover {
+  color: aliceblue;
+}
