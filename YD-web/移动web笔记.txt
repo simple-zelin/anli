@@ -1,0 +1,312 @@
+第一天
+（1）字体图标的使用
+（2）平面转换：改变盒子在平面内的形态（位移、旋转、缩放）
+属性：transform
+一、平面转换之平移：
+transform: translate(100px, 100px);
+取值：1、像素+px
+2、百分比（参照物为盒子自身尺寸）
+注意：X轴正方向为右，Y轴正方向为下，translate（）如果只给出一个值，表示X轴方向移动距离
+3、单独设置某个方向的移动距离：translateX（）&translateY（）
+
+位移之绝对定位居中：
+position: absolute;
+left: 50%;
+top: 50%;
+transform :translate(-50%,-50%)
+
+二、平面转换之旋转
+语法：transform： rotate（旋转角度）;
+注意：角度单位是deg
+技巧：取正值，为顺时针旋转；取负值则为逆时针旋转
+设置旋转中心店：
+语法：transform-origin：right bottom；
+注意：盒子默认以中心点为旋转中心
+取值：1、方位名词（left、top、right、bottom、center）2、像素单位值  3、百分比（参照盒子自身尺寸）
+
+
+多重转换：
+使用tranform复合属性实现多形态转换
+transform：translateX(600px) rotate(360deg);
+
+三、平面转换之缩放
+语法：transform： scale（x轴缩放倍数，y轴缩放倍数）
+技巧：1、一般情况下，只为scale设置一个值，表示x轴和y轴的等比例缩放；2、scale值大于1表示放大，xiaoyu1表示缩小
+渐变：
+使用background-image属性实现渐变背景效果
+background-image：linear-gradient（red，green，blue）
+
+第二天
+一、空间转换（3D转换）
+目标：使用transform属性实现元素在空间内的位移、旋转、缩放等效果
+空间：是从坐标轴角度定义的。x、y和z轴构成了一个立体空间，z轴位置与视线方向相同
+属性：transform
+空间转换之位移
+语法：
+transform：translate3d（x，y，z）；
+transform：translateX（数值）；
+transform：translateY(数值)；
+transform：translateZ(数值)；
+取值（正负均可）：1、像素单位值 2、百分比
+二、透视效果
+属性：perspective
+取值：像素单位数值，数值一般在800-1200
+作用：空间转换时，为元素添加近大远小，近实远虚的视觉效果
+
+三、空间转换之旋转
+transform：rotateX（度数）
+transform：rotateY（度数）
+左手法则
+判断旋转方向：左手握住旋转轴，拇指指向为正值方向，手指弯曲方向为旋转正值方向
+
+四、立体呈现
+目标: 使用transform-style: preserve-3d呈现立体图形
+思考：使用perspective透视属性能否呈现立体图形?
+答：不能，perspective只增加近大远小、近实远虚的视觉效果。
+实现方法：添加 transform-style: preserve-3d;
+作用：使子元素处于真正的3d空间
+呈现立体图形步骤
+1、盒子父元素添加transform-style: preserve-3d;
+2、 按需求设置子盒子的位置(位移或旋转)
+注意：空间内，转换元素都有自已独立的坐标轴，互不干扰
+
+五、空间转换之缩放
+语法：
+transform: scaleX(倍数);
+transform: scaleY(倍数);
+transform: scaleZ(倍数);
+transform: scale3d(x, y, z);
+动画
+目标：使用animation添加动画效果
+思考：过渡可以实现什么效果? 答：实现2个状态间的变化过程
+动画效果：实现多个状态间的变化过程，动画过程可控(重复播放、最终画面、是否暂停)
+1、使用自定义动画：
+定义动画：
+/* 方式一 */
+@keyframes 动画名称 {
+  from {}
+  to {}
+}
+
+/* 方式二 */        
+@keyframes 动画名称 {
+  0% {}
+  10% {}
+  50% {}
+  100% {}
+}
+
+使用动画：
+animation: 动画名称 动画所花费的时长;
+
+2、动画属性
+animatiaon：动画名称 动画时长 速度曲线 延迟时间 重复次数 动画方向 执行完毕时状态；
+animation: name duration timing-function delay iteration-count direction fill-mode;（用对应的属性值替换它们）
+
+
+第三天
+分辨率分类
+物理分辨率：生产屏幕时就固定的，它是不可被改变的
+逻辑分辨率：由软件(驱动)决定的
+视口
+目标：使用meta标签设置视口宽度，制作适配不同设备宽度的网页
+思考：手机屏幕尺寸都不同， 并且网页宽度为100%，那么网页的宽度和移动设备逻辑分辨率尺寸相同吗？如果不相同该如何设置？
+答案：网页的宽度和移动设备逻辑分辨率尺寸是不相同，这时候我们需要添加视口标签来解决这一问题。
+总结：视口的作用是让网页的宽度和设备的逻辑分辨率保持一致。
+
+百分比布局：
+概念：百分比布局， 也叫流式布局
+效果：宽度自适应，高度固定。
+
+flex布局：
+优势：
+Flex布局是一种浏览器提倡的布局模型
+布局网页更简单、灵活
+避免浮动脱标的问题
+兼容性问题
+作用：
+基于 Flex 精确灵活控制块级盒子的布局方式，避免浮动布局中脱离文档流现象发生。
+Flex布局非常适合结构化布局
+设置方式：
+给父元素添加 display: flex，子元素可以自动的挤压或拉伸
+flex布局模型组成部分：
+弹性容器
+弹性盒子
+主轴
+侧轴/交叉轴
+
+主轴对齐方式
+属性名：justify-content
+属性值：flex-start(默认值，起点开始以此排序)、flex-end（终点开始依次排序）、center（沿主轴居中排列）、space-around（弹性盒子沿主轴均匀排列，空白间隙均分在弹性盒子两侧）、、space-between（弹性盒子沿主轴均匀排列，空白间隙均分在相邻盒子两侧）
+
+侧轴对齐方式
+属性名：align-items
+属性值：flex-start（默认值，起点开始依次排列）、flex-end）（终点开始依次排列）、center（沿侧轴居中排列）、stretch（默认值，弹性盒子沿着主轴线被拉伸至铺满容器）
+
+伸缩比
+作用：按照比例来划分容器盒子的宽度
+属性名：flex
+属性值：数值（整数）
+注意： 只占用父盒子剩余尺寸
+
+第四天
+一、主轴方向
+1、修改主轴方向
+思考：Flex布局模型中，弹性盒子默认沿着哪个方向排列？
+答：水平方向。
+思考：如何实现内容垂直排列？
+主轴默认是水平方向，侧轴默认是垂直方向
+修改主轴方向属性：flex-direction
+属性值：row（行、水平-默认值）、column（列、垂直）、row-reverse（行，从右往左）、column-reve（列，从下往上）
+2、flex-wrap实现多行排列
+思考：默认情况下，多个弹性盒子如何显示?
+弹性盒子换行显示：flex-wrap: wrap;
+调整行对齐方式：align-content，取值与justify-content基本相同
+
+第五天
+一、移动端适配
+移动端适配解决方案
+rem：目前多数企业在用的解决方案
+vw / vh：未来的解决方案
+1、rem
+效果：屏幕宽度不同，网页元素尺寸不同（等比缩放）
+
+2、rem的基本使用
+问题：px单位或百分比布局可以实现吗？
+答案：不可以。（1）、px单位是绝对单位。 （1）、百分比布局特点宽度自适应，高度固定
+rem单位特点：（1）、rem是相对单位
+ （2）、rem单位是相对于HTML标签的字号计算结果
+（3）、1rem = 1HTML字号大小
+
+3、rem配合媒体查询
+思考： 手机屏幕大小不同，分辨率不同， 如何设置不同的HTML标签字号?
+媒体查询：（1）、媒体查询能够检测视口的宽度，然后编写差异化的 CSS 样式
+ （2）、当某个条件成立， 执行对应的CSS样式
+语法：
+@media（媒体特性）{
+选择器{
+	css属性	
+	}
+}
+
+@media（width：320px）{
+html{
+	font-size：32px；
+	}
+}
+
+4、rem移动端适配
+思考：设备宽度不同，HTML标签字号设置多少合适?
+1、设备宽度大， 元素尺寸大
+2、设备宽度小，元素尺寸小
+目前rem布局方案中，将网页等分成10份， HTML标签的字号为视口宽度的 1/10
+
+5、rem布局流程
+1、根据视口宽度，设置不同的HTML标签字号
+2、书写代码，尺寸是rem单位
+• 确定设计稿对应的设备的HTML标签字号
+• 查看设计稿宽度 → 确定参考设备宽度(视口宽度) → 确定基准根字号(1/10视口宽度)
+• rem单位的尺寸
+• N*37.5=68 →N=68/37.5
+• rem单位的尺寸 = px单位数值 / 基准根字号
+
+6、flexible 配合rem
+flexible.js 是手淘开发出的一个用来适配移动端的js框架。核心原理就是根据不同的视口宽度给网页中html根节点设置不同的font-size。
+<!-- 通过 script 标签引入外部 js 文件 -->
+<script src="./js/flexible.js"></script>
+
+二、less
+什么是Less：
+• Less是一个CSS预处理器, Less文件后缀是 .less
+• 扩充了 CSS 语言, 使 CSS 具备一定的逻辑性、计算能力。
+• 注意：浏览器不识别Less代码，目前阶段，网页要引入对应的CSS文件。
+less运算
+加、减、乘直接书写计算表达式
+加法
+width: 100 + 10px;
+ 减法
+height: 100 - 20px;
+ 乘法
+width: 100 * 3px;
+
+除法需要添加 小括号 或 .
+ 除法，推荐使用小括号方式
+width: (68 / 37.5rem);
+或者
+height: 68 ./ 37.5rem;  注意：表达式存在多个单位以第一个单位为准
+
+Less 嵌套语法
+.父级选择器 {
+   .子级选择器 {
+   }
+ }
+.father {
+  width: 300px;
+  .son {
+    font-size: 12px;
+    &:hover {
+      color: red;
+    }
+  }
+  &::after {
+    content: "1";
+    display: block;
+  }
+}
+注意：&不生成后代选择器，表示当前选择器，通常配合伪类或伪元素使用
+
+Less 变量
+方法一：1、逐一修改属性值（太繁琐）
+ 2、把颜色提前存储到一个容器，设置属性值为这个容器名
+方法二：把颜色提前存储到一个容器，设置属性值为这个容器名
+变量：存储数据，方便使用和修改。
+语法：定义变量：@变量名: 值;
+使用变量：CSS属性:@变量名;
+// 定义变量
+@color: purple;
+
+// 使用变量
+.box {
+  color: @color;
+}
+
+Less 导入
+CSS：书写link标签
+Less：导入
+Less 导入语法：@import "文件路径";
+@import "01-体验less.less";
+@import "02-注释";
+
+Less 导出css
+方法一（插件配置）：配置EasyLess插件， 实现所有Less有相同的导出路径
+配置插件：设置 → 搜索EasyLess → 在setting.json中编辑 → 添加代码（注意，必须是双引号）
+
+方法二（单独路径）：控制当前Less文件导出路径
+写法：Less文件第一行添加如下代码，注意文件夹名称后面添加 /\
+// 导出到所配置的文件夹下
+// out: ./abc/
+
+// 导出到所配置的文件夹下并指定文件名
+// out: ./qqq/common.css
+
+
+第六天
+一、响应式
+1、什么是响应式网页
+2、媒体查询
+ 开发常用写法
+• max-width
+• min-width
+
+@media（媒体特性）{
+选择器{
+	样式	
+	}
+}
+
+二、BootStrap
+使用：
+1、引入：BootStrap提供的CSS代码
+<link rel="stylesheet" href="./bootstrap-3.3.7/css/bootstrap.css">
+2、调用类：使用BootStrap提供的样式
+<div class="container">1</div>
